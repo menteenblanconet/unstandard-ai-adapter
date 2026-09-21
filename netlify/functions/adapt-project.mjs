@@ -173,11 +173,11 @@ Create a practical adaptation. In the revised project, keep the original discipl
       body: JSON.stringify({
         model: process.env.OPENAI_MODEL || "gpt-5.6-luna",
         reasoning: {
-  effort: "low"
+  effort: "none"
 },
         instructions: SYSTEM_INSTRUCTIONS,
         input: userInput,
-        max_output_tokens: 3500,
+        max_output_tokens: 2200,
         text: {
           format: {
             type: "json_schema",
