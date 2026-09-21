@@ -171,10 +171,13 @@ Create a practical adaptation. In the revised project, keep the original discipl
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: process.env.OPENAI_MODEL || "gpt-5.6-terra",
+        model: process.env.OPENAI_MODEL || "gpt-5.6-luna",
+        reasoning: {
+  effort: "low"
+},
         instructions: SYSTEM_INSTRUCTIONS,
         input: userInput,
-        max_output_tokens: 6500,
+        max_output_tokens: 3500,
         text: {
           format: {
             type: "json_schema",
@@ -188,6 +191,13 @@ Create a practical adaptation. In the revised project, keep the original discipl
 
     const data = await apiResponse.json();
 
+    console.log("OpenAI status:", apiResponse.status);
+console.log("OpenAI response:", {
+  ok: apiResponse.ok,
+  errorType: data?.error?.type || null,
+  errorCode: data?.error?.code || null,
+  errorMessage: data?.error?.message || null
+});
     if (!apiResponse.ok) {
       console.error("OpenAI API error:", data);
       return Response.json(
