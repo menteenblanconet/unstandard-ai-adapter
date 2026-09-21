@@ -177,7 +177,7 @@ Create a practical adaptation. In the revised project, keep the original discipl
 },
         instructions: SYSTEM_INSTRUCTIONS,
         input: userInput,
-        max_output_tokens: 2200,
+        max_output_tokens: 3500,
         text: {
           format: {
             type: "json_schema",
