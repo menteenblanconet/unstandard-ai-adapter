@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="UN-STANDARD AI Project Adapter for accessible, flexible, student-centered graphic design education." />
+  <title>UN-STANDARD | Adapt Your Project</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">UN-STANDARD</p>
+        <h1 id="page-title" data-i18n="title">Adapt Your Project</h1>
+        <p class="hero-copy" data-i18n="subtitle">Turn an existing graphic design project into a more flexible, accessible, and student-centered learning experience.</p>
+      </div>
+      <div class="language-switch" aria-label="Language">
+        <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <form id="adapter-form">
+        <div class="grid two">
+          <div class="field">
+            <label for="projectTitle" data-i18n="projectTitle">Project title</label>
+            <input id="projectTitle" name="projectTitle" type="text" maxlength="160" required data-i18n-placeholder="projectTitlePlaceholder" placeholder="e.g., Restaurant Branding Project" />
+          </div>
+          <div class="field">
+            <label for="course" data-i18n="course">Course / area</label>
+            <select id="course" name="course">
+              <option>Graphic Design Fundamentals</option>
+              <option>Typography</option>
+              <option>Branding / Identity Design</option>
+              <option>Graphic Design Production</option>
+              <option>Publication Design</option>
+              <option>Interaction Design</option>
+              <option>Mobile App Design</option>
+              <option>Narrative Illustration</option>
+              <option>Advertising Design</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid two">
+          <div class="field">
+            <label for="duration" data-i18n="duration">Approximate duration</label>
+            <input id="duration" name="duration" type="text" maxlength="100" data-i18n-placeholder="durationPlaceholder" placeholder="e.g., 4 weeks" />
+          </div>
+          <div class="field">
+            <label for="studentLevel" data-i18n="studentLevel">Student level</label>
+            <input id="studentLevel" name="studentLevel" type="text" maxlength="120" data-i18n-placeholder="studentLevelPlaceholder" placeholder="e.g., Undergraduate, introductory course" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="projectDescription" data-i18n="projectDescription">Current project description</label>
+          <p class="help" data-i18n="projectDescriptionHelp">Paste the assignment as it currently exists. Include deliverables and major steps when possible.</p>
+          <textarea id="projectDescription" name="projectDescription" rows="9" maxlength="14000" required data-i18n-placeholder="projectDescriptionPlaceholder" placeholder="Paste your project instructions here..."></textarea>
+        </div>
+
+        <div class="grid two">
+          <div class="field">
+            <label for="learningObjectives" data-i18n="learningObjectives">Learning objectives</label>
+            <p class="help" data-i18n="learningObjectivesHelp">Optional, but recommended. These will be preserved.</p>
+            <textarea id="learningObjectives" name="learningObjectives" rows="5" maxlength="5000" data-i18n-placeholder="learningObjectivesPlaceholder" placeholder="What should students know or be able to do?"></textarea>
+          </div>
+          <div class="field">
+            <label for="essentialRequirements" data-i18n="essentialRequirements">Non-negotiable requirements</label>
+            <p class="help" data-i18n="essentialRequirementsHelp">Anything that must remain unchanged to preserve rigor.</p>
+            <textarea id="essentialRequirements" name="essentialRequirements" rows="5" maxlength="5000" data-i18n-placeholder="essentialRequirementsPlaceholder" placeholder="e.g., final logo must be vector-based; critique participation is required"></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="knownBarriers" data-i18n="knownBarriers">Barriers or challenges you have noticed</label>
+          <p class="help" data-i18n="knownBarriersHelp">Optional. Describe difficulties with instructions, pacing, participation, tools, process documentation, critique, or assessment.</p>
+          <textarea id="knownBarriers" name="knownBarriers" rows="4" maxlength="5000" data-i18n-placeholder="knownBarriersPlaceholder" placeholder="e.g., some students struggle to organize the process book or ask for feedback"></textarea>
+        </div>
+
+        <fieldset class="approaches">
+          <legend data-i18n="approaches">Choose the approaches to apply</legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="approaches" value="Universal Design for Learning (UDL)" checked /> <span>UDL / DUA</span></label>
+            <label class="chip"><input type="checkbox" name="approaches" value="Social and Emotional Learning (SEL)" checked /> <span>SEL / ASE</span></label>
+            <label class="chip"><input type="checkbox" name="approaches" value="Student-Centered Learning" checked /> <span data-i18n="studentCentered">Student-Centered Learning / ACE</span></label>
+            <label class="chip"><input type="checkbox" name="approaches" value="Accessibility" checked /> <span data-i18n="accessibility">Accessibility</span></label>
+            <label class="chip"><input type="checkbox" name="approaches" value="Design Thinking" /> <span>Design Thinking</span></label>
+          </div>
+        </fieldset>
+
+        <div class="privacy-note" role="note">
+          <strong data-i18n="privacyTitle">Privacy reminder:</strong>
+          <span data-i18n="privacyText">Do not paste student names, diagnoses, grades, or other personally identifiable student information.</span>
+        </div>
+
+        <div class="actions">
+          <button id="submit-btn" class="primary-btn" type="submit"><span data-i18n="adaptButton">Adapt My Project</span></button>
+          <button id="clear-btn" class="secondary-btn" type="button" data-i18n="clearButton">Clear</button>
+        </div>
+        <p id="form-status" class="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="results" class="results hidden" aria-live="polite">
+      <div class="results-header">
+        <div>
+          <p class="eyebrow" data-i18n="resultsEyebrow">UN-STANDARD adaptation</p>
+          <h2 id="result-title" data-i18n="resultsTitle">Your Adapted Project</h2>
+        </div>
+        <div class="result-actions">
+          <button id="copy-btn" class="secondary-btn" type="button" data-i18n="copyButton">Copy</button>
+          <button id="download-btn" class="secondary-btn" type="button" data-i18n="downloadButton">Download TXT</button>
+          <button id="print-btn" class="secondary-btn" type="button" data-i18n="printButton">Print / Save PDF</button>
+        </div>
+      </div>
+      <article id="results-content" class="result-content"></article>
+      <div class="disclaimer" data-i18n="disclaimer">Use these suggestions as a planning aid. The instructor remains responsible for course requirements, accessibility obligations, and final instructional decisions.</div>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
